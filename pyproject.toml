@@ -1,0 +1,17 @@
+[project]
+name = "amz13project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.3.5",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.3",
+    "pathlib>=1.0.1",
+    "polars>=1.35.2",
+    "sqlalchemy>=2.0.44",
+    "volcengine-python-sdk[ark]>=4.0.36",
+    "xlrd>=2.0.2",
+    "psycopg2-binary>=2.9.9",
+]
