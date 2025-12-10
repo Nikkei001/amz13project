@@ -13,8 +13,13 @@ def export_to_postgres(df, table_name):
     try:
         # Export DataFrame to PostgreSQL with schema specified
         with engine.connect() as conn:
-            conn.execute(text(f'DELETE FROM "WorkFlow"."{table_name}"'))
-            conn.commit()
+            result = conn.execute(
+                text(f"SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = :tablename)"),
+                {"tablename": table_name}
+            )
+            if result.scalar():
+                conn.execute(text(f'DELETE FROM "{DB_CONFIG['schema']}"."{table_name}"'))
+                conn.commit()
         df.to_sql(table_name, engine, if_exists='append', index=False, schema=DB_CONFIG['schema'])
         print(f"Data successfully exported to table '{table_name}' in schema '{DB_CONFIG['schema']}' in database '{DB_CONFIG['database']}'")
     except Exception as e:
