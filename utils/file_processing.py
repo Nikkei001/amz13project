@@ -14,10 +14,10 @@ def fileProcessing(fileinfo, need_melt = False, customTableName = ""):
     if need_melt:
         melted_data = pd.melt(
             cleaned_data,
-            fileinfo['static_column'],
-            fileinfo['column_to_transfer'],
-            fileinfo['unpivoted_column']        
-        )
+            id_vars= fileinfo['static_column'],
+            value_vars= fileinfo['column_to_transfer'],
+            value_name= fileinfo['unpivoted_column'] 
+        ).dropna(subset=[fileinfo['unpivoted_column']]).drop(columns=['variable'])
 
     exportData = extd.export_to_postgres(
         melted_data if need_melt else cleaned_data,
