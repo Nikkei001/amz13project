@@ -19,10 +19,11 @@ def fileProcessing(fileinfo, need_melt = False, customTableName = ""):
             value_name= fileinfo['unpivoted_column'] 
         ).dropna(subset=[fileinfo['unpivoted_column']]).drop(columns=['variable'])
 
-    exportData = extd.export_to_postgres(
-        melted_data if need_melt else cleaned_data,
-        customTableName if need_melt else fileinfo['database_table']
-    )
+    if fileinfo['export_to_database']:
+        extd.export_to_postgres(
+            melted_data if need_melt else cleaned_data,
+            customTableName if need_melt else fileinfo['database_table']
+        )
 
 def main():
     print("hola")

@@ -13,7 +13,8 @@ def findSingleDocument(folderPath, keyword, caseSensitive=False):
     return targetFile[0]
 
 test = findSingleDocument(r'C:\Users\Administrator\OneDrive\文档\产品库存数量表\产品库存数量表原表\产品库存数量表_原表\原表', 'copy')
-print(test)
+
+
 
 if __name__ == '__main__':
     print("ha hahaha hahahaha hahahahahahaha")

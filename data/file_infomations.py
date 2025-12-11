@@ -11,7 +11,8 @@ FILE_INFOMATION = [
         'database_table': 'productIDs',
         'static_column': ['产品编号'],
         'column_to_transfer': ['新产品编号', '新产品编号2', "新产品编号3"],
-        'unpivoted_column': '迭代编码'
+        'unpivoted_column': '迭代编码',
+        'export_to_database': True
     },
     {
         'file_path': r'D:\Nikkei\learning\CodingProj\originalFiles\productAndInventoryTableData',
@@ -22,7 +23,20 @@ FILE_INFOMATION = [
         'database_table': 'findNewProductIDs',
         'static_column': [],
         'column_to_transfer': "",
-        'unpivoted_column': []
+        'unpivoted_column': "",
+        'export_to_database': True
+    },
+    {
+        'file_path': r'D:\Nikkei\learning\CodingProj\originalFiles\productAndInventoryTableData',
+        'key_word': '普通产品作图顺序表',
+        'sheet': '',
+        'column_used': ['产品编号', '上架时间', '销售', '销售(欧洲)'], 
+        'column_dropna': ['产品编号'],
+        'database_table': 'OrdinaryProductPlotOrder',
+        'static_column': [],
+        'column_to_transfer': "",
+        'unpivoted_column': "",
+        'export_to_database': False
     }
 ]
 
