@@ -1,8 +1,10 @@
 from utils import data_cleaning as dacln
 from utils import exportToDatabase as extd
 import pandas as pd
+from data.returned_data import returned_data_collection
 
 def fileProcessing(fileinfo, need_melt = False, customTableName = ""):
+
     cleaned_data = dacln.data_cleaning(
         fileinfo['file_path'],
         fileinfo['key_word'],
@@ -24,6 +26,10 @@ def fileProcessing(fileinfo, need_melt = False, customTableName = ""):
             melted_data if need_melt else cleaned_data,
             customTableName if need_melt else fileinfo['database_table']
         )
+    else:
+        print(f"Table {fileinfo['key_word']} export to database skipped.")
+        returned_data = melted_data if need_melt else cleaned_data
+        returned_data_collection.update({fileinfo['key_word']: returned_data})
 
 def main():
     print("hola")
