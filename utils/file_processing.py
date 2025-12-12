@@ -29,7 +29,7 @@ def fileProcessing(fileinfo, need_melt = False, customTableName = ""):
     else:
         print(f"Table {fileinfo['key_word']} export to database skipped.")
         returned_data = melted_data if need_melt else cleaned_data
-        returned_data_collection.update({fileinfo['key_word']: returned_data})
+        returned_data_collection.update({fileinfo['key_word'] + fileinfo['sheet']: returned_data})
 
 def main():
     print("hola")

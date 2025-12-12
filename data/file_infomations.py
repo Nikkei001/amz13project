@@ -3,13 +3,13 @@
 # unpivoted_column -- 逆透视后的列
 FILE_INFOMATION = [
     {
-        'file_path': r'C:\Users\Administrator\OneDrive\文档\产品库存数量表\产品库存数量表原表\产品库存数量表_原表\原表',
+        'file_path': r'./SourceData',
         'key_word': 'copy',
         'sheet': '美国库存状况',
-        'column_used': ['产品编号', '新产品编号', '新产品编号2', "新产品编号3"],
+        'column_used': ['业务员', '产品编号', '新产品编号', '新产品编号2', '新产品编号3'],
         'column_dropna': ['产品编号'],
         'database_table': 'productIDs',
-        'static_column': ['产品编号'],
+        'static_column': ['业务员', '产品编号'],
         'column_to_transfer': ['新产品编号', '新产品编号2', "新产品编号3"],
         'unpivoted_column': '迭代编码',
         'export_to_database': True
@@ -48,6 +48,66 @@ FILE_INFOMATION = [
         'static_column': [],
         'column_to_transfer': "",
         'unpivoted_column': "",
+        'export_to_database': False
+    },
+    {
+       'file_path': r'./SourceData',
+        'key_word': 'Copy',
+        'sheet': '美国库存状况',
+        'column_used': ['业务员', '产品编号', '新产品编号', '新产品编号2', '新产品编号3'],
+        'column_dropna': ['产品编号'],
+        'database_table': 'productIDs',
+        'static_column': ['业务员', '产品编号'],
+        'column_to_transfer': ['新产品编号', '新产品编号2', "新产品编号3"],
+        'unpivoted_column': '迭代编码',
+        'export_to_database': False 
+    },
+    {
+        'file_path': r'./SourceData',
+        'key_word': 'Copy',
+        'sheet': '品牌部产品状况',
+        'column_used': ['业务员', '产品编号', '新产品编号', '新产品编号2', '新产品编号3'],
+        'column_dropna': ['产品编号'],
+        'database_table': 'productIDs',
+        'static_column': ['业务员', '产品编号'],
+        'column_to_transfer': ['新产品编号', '新产品编号2', "新产品编号3"],
+        'unpivoted_column': '迭代编码',
+        'export_to_database': False 
+    },
+    {
+        'file_path': r'./SourceData',
+        'key_word': 'Copy',
+        'sheet': '德国库存状况',
+        'column_used': ['业务员', '产品编号', '新产品编号', '新产品编号2', '新产品编号3'],
+        'column_dropna': ['产品编号'],
+        'database_table': 'productIDs',
+        'static_column': ['业务员', '产品编号'],
+        'column_to_transfer': ['新产品编号', '新产品编号2', "新产品编号3"],
+        'unpivoted_column': '迭代编码',
+        'export_to_database': False 
+    },
+    {
+        'file_path': r'./SourceData',
+        'key_word': 'Copy',
+        'sheet': '英国库存状况',
+        'column_used': ['业务员', '产品编号', '新产品编号', '新产品编号2', '新产品编号3'],
+        'column_dropna': ['产品编号'],
+        'database_table': 'productIDs',
+        'static_column': ['业务员', '产品编号'],
+        'column_to_transfer': ['新产品编号', '新产品编号2', "新产品编号3"],
+        'unpivoted_column': '迭代编码',
+        'export_to_database': False 
+    },
+    {
+        'file_path': r'./SourceData',
+        'key_word': 'Copy',
+        'sheet': '加拿大库存状况',
+        'column_used': ['业务员', '产品编号', '新产品编号', '新产品编号2', '新产品编号3'],
+        'column_dropna': ['产品编号'],
+        'database_table': 'productIDs',
+        'static_column': ['业务员', '产品编号'],
+        'column_to_transfer': ['新产品编号', '新产品编号2', "新产品编号3"],
+        'unpivoted_column': '迭代编码',
         'export_to_database': False
     }
 ]
