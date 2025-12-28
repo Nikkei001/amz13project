@@ -27,7 +27,7 @@ FILE_INFOMATION = [
         'export_to_database': True
     },
     {
-        'file_path': r'D:\Nikkei\learning\CodingProj\originalFiles\productAndInventoryTableData',
+        'file_path': r'./SourceData',
         'key_word': '普通产品作图顺序表',
         'sheet': '',
         'column_used': ['产品编号', '上架时间', '销售', '销售(欧洲)'], 
@@ -39,7 +39,7 @@ FILE_INFOMATION = [
         'export_to_database': False
     },
     {
-        'file_path': r'D:\Nikkei\learning\CodingProj\originalFiles\productAndInventoryTableData',
+        'file_path': r'./SourceData',
         'key_word': 'stosense作图顺序表',
         'sheet': '',
         'column_used': ['产品编号', '上架时间', '销售', '销售(欧洲)'], 
