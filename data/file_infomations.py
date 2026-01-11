@@ -15,7 +15,7 @@ FILE_INFOMATION = [
         'export_to_database': True
     },
     {
-        'file_path': r'D:\Nikkei\learning\CodingProj\originalFiles\productAndInventoryTableData',
+        'file_path': r'./SourceData',
         'key_word': '海外仓库存状况统计表导出',
         'sheet': 'sheet1',
         'column_used': ['产品编号', '迭代产品'],
