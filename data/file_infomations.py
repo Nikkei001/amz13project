@@ -109,6 +109,18 @@ FILE_INFOMATION = [
         'column_to_transfer': ['新产品编号', '新产品编号2', "新产品编号3"],
         'unpivoted_column': '迭代编码',
         'export_to_database': False
+    },
+    {
+        'file_path': r'./SourceData',
+        'key_word': '分包老产品',
+        'sheet': 'Sheet1',
+        'column_used': ['销售', '主编码', '分包子编码'],
+        'column_dropna': ['主编码'],
+        'database_table': 'splitOldProductIDs',
+        'static_column': [],
+        'column_to_transfer': [],
+        'unpivoted_column': '',
+        'export_to_database': True
     }
 ]
 

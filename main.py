@@ -2,6 +2,7 @@ from data.file_infomations import FILE_INFOMATION as finfos
 from utils.file_processing import fileProcessing
 from utils.exportToDatabase import export_to_postgres
 from data.returned_data import returned_data_collection
+from utils.pmcTableCombine import merge_new_products
 import pandas as pd
 import numpy as np
 
@@ -81,3 +82,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# 处理并合并pmc发货表中的产品
+merge_new_products()

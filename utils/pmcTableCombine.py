@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 from pathlib import Path
+from.exportToDatabase import export_to_postgres
 
 def merge_new_products():
     # 定义源文件夹路径 (使用原始字符串避免转义问题)
@@ -30,9 +31,9 @@ def merge_new_products():
             df.columns = [col.replace('\n', '').replace('\r', '').strip() 
                           for col in df.columns]
             
-            # 选取指定列并过滤"产品类别"为"新品"
+            # 选取指定列
             if '产品类型' in df.columns and '产品编号' in df.columns and '站点' in df.columns:
-                filtered_df = df[df['产品类型'] == '新品'][['产品类型', '产品编号', '站点']]
+                filtered_df = df[['产品类型', '产品编号', '站点']]
                 all_data.append(filtered_df)
             else:
                 print(f"警告: 文件 {file} 缺少必要列，已跳过")
@@ -46,13 +47,9 @@ def merge_new_products():
     # 合并所有DataFrame
     merged_df = pd.concat(all_data, ignore_index=True).drop_duplicates()
     
-    # 输出到原路径
-    output_path = os.path.join(source_dir, "合并新产品.xlsx")
-    merged_df.to_excel(output_path, index=False)
+    # 导出到PostgreSQL数据库
+    export_to_postgres(merged_df, "PMCCombinedProducts")
     
-    print(f"处理完成! 已生成: {output_path}")
-    print(f"共合并 {len(merged_df)} 条新品数据")
-    return output_path
 
 # 使用示例
 if __name__ == "__main__":
